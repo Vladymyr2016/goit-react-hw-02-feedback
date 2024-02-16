@@ -1,0 +1,26 @@
+.transaction {
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.item {}
+
+.type {
+    background-color: blue;
+}
+
+.itemTr {
+    background-color: aqua;
+}
+
+.itemHead {
+    background-color: blue;
+}
+
+.td:nth-child(2n+1) {
+    background-color: lightyellow;
+}
+
+.amount {}
+
+.currency {}
