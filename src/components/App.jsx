@@ -1,6 +1,7 @@
 import FeadbackOptions from './FeadbackForm/FeadbackOptions';
 import Statistic from './Statistic/Statistic';
 import React, { Component } from 'react';
+import Section from './Section/Section';
 
 class App extends Component {
   state = {
@@ -23,6 +24,7 @@ class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
+    const totalFeadback = this.countTotalFeadback();
     return (
       <div
         style={{
@@ -33,17 +35,25 @@ class App extends Component {
           color: '#010101',
         }}
       >
-        <FeadbackOptions
-          options={Object.keys(this.state)}
-          onLiveFeadback={option => this.onLiveFeadback({ value: option })}
-        />
-        <Statistic
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={this.countTotalFeadback}
-          positivePercentage={this.countPositiveFeadbackPercentage}
-        />
+        <Section title="Please leave your featbeak">
+          <FeadbackOptions
+            options={Object.keys(this.state)}
+            onLiveFeadback={option => this.onLiveFeadback({ value: option })}
+          />
+        </Section>
+        <Section title="Statistics">
+          {totalFeadback > 0 ? (
+            <Statistic
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={this.countTotalFeadback}
+              positivePercentage={this.countPositiveFeadbackPercentage}
+            />
+          ) : (
+            <p>'There is no feedback'</p>
+          )}
+        </Section>
       </div>
     );
   }

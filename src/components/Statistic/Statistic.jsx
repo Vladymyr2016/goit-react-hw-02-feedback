@@ -3,7 +3,6 @@ import React from 'react';
 const Statistic = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <div>
-      <h2>Statistics</h2>
       <ul>
         <li>
           <span>good: </span>
