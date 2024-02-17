@@ -35,7 +35,7 @@ class App extends Component {
       >
         <FeadbackOptions
           options={Object.keys(this.state)}
-          onLiveFeadback={option => this.onLiveFeadback(option)}
+          onLiveFeadback={option => this.onLiveFeadback({ value: option })}
         />
         <Statistic
           good={good}

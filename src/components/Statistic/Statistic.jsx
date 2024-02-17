@@ -19,11 +19,11 @@ const Statistic = ({ good, neutral, bad, total, positivePercentage }) => {
         </li>
         <li>
           <span>Total: </span>
-          <span>{total}</span>
+          <span>{total()}</span>
         </li>
         <li>
           <span>Positiv fedback: </span>
-          <span>{positivePercentage}%</span>
+          <span>{positivePercentage()}%</span>
         </li>
       </ul>
     </div>
