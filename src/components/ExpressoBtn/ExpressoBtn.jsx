@@ -15,7 +15,7 @@ class ExpressoBtn extends Component {
     return this.state.good + this.state.neutral + this.state.bad;
   };
   countPositiveFeedbackPercentage = () => {
-    return (this.countTotalFeedback() * this.state.good) / 100;
+    return Math.round((100 * this.state.good) / this.countTotalFeedback());
   };
 
   render() {
@@ -29,20 +29,24 @@ class ExpressoBtn extends Component {
         <h2>Statistics</h2>
         <ul>
           <li>
-            <span>good</span>
+            <span>good: </span>
             <span>{this.state.good}</span>
           </li>
           <li>
-            <span>Neutral</span>
+            <span>Neutral: </span>
             <span>{this.state.neutral}</span>
           </li>
           <li>
-            <span>Bad</span>
+            <span>Bad: </span>
             <span>{this.state.bad}</span>
           </li>
           <li>
-            <span>Total</span>
+            <span>Total: </span>
             <span>{this.countTotalFeedback()}</span>
+          </li>
+          <li>
+            <span>Positiv fedback: </span>
+            <span>{this.countPositiveFeedbackPercentage()}%</span>
           </li>
         </ul>
       </div>
