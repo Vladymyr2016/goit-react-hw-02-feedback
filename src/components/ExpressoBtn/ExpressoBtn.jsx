@@ -1,23 +1,6 @@
 import React, { Component } from 'react';
 
 class ExpressoBtn extends Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  };
-
-  onLiveFeadback = value => {
-    this.setState({ [value]: this.state[value] + 1 });
-  };
-
-  countTotalFeedback = () => {
-    return this.state.good + this.state.neutral + this.state.bad;
-  };
-  countPositiveFeedbackPercentage = () => {
-    return Math.round((100 * this.state.good) / this.countTotalFeedback());
-  };
-
   render() {
     return (
       <div>
