@@ -1,7 +1,6 @@
 import React from 'react';
 
 const FeadbackOptions = ({ options, onLiveFeadback }) => {
-  console.log(onLiveFeadback);
   return (
     <div>
       <h1>Please leave your featbeak</h1>
